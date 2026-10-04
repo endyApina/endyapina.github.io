@@ -15,7 +15,6 @@
       --muted: #8b949e;
       --accent: #2f81f7;
       --accent-dim: rgba(47, 129, 247, 0.15);
-      --code-bg: #161b22;
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
     }
@@ -39,10 +38,35 @@
       margin: 0 auto;
     }
 
+    /* HEADER & PROFILE IMAGE SECTION */
     header {
       border-bottom: 1px solid var(--border);
       padding-bottom: 2rem;
       margin-bottom: 2.5rem;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .profile-image-container {
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      background-color: var(--card-bg);
+      display: block;
+    }
+
+    .header-text {
+      flex-grow: 1;
     }
 
     h1 {
@@ -249,6 +273,15 @@
       color: var(--muted);
       text-align: center;
     }
+
+    /* Responsive adjustments for image header */
+    @media (max-width: 580px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -257,14 +290,22 @@
     
     <!-- HEADER -->
     <header>
-      <h1>Endurance (Endy) Apinageri</h1>
-      <div class="subtitle">Senior Backend &amp; Platform Engineer</div>
-      <div class="contact-links">
-        <span>Golang • Python • TypeScript</span>
-        <span>|</span>
-        <a href="mailto:apinaendy@gmail.com">apinaendy@gmail.com</a>
-        <a href="https://github.com/endyApina" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/endyapina/" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="header-content">
+        <div class="profile-image-container">
+          <!-- Replace profile.jpg with the path to your image file -->
+          <img src="profile.png" alt="Endurance Apinageri" class="profile-img" onerror="this.src='https://via.placeholder.com/110/161b22/8b949e?text=EA'">
+        </div>
+        <div class="header-text">
+          <h1>Endurance (Endy) Apinageri</h1>
+          <div class="subtitle">Senior Software Engineer | Platform Engineer | AI Researcher </div>
+          <div class="contact-links">
+            <span>Golang • Python • TypeScript</span>
+            <span>|</span>
+            <a href="mailto:apinaendy@gmail.com">apinaendy@gmail.com</a>
+            <a href="https://github.com/endyApina" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/endyapina/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
       </div>
     </header>
 
