@@ -1,196 +1,760 @@
-Here is your complete article formatted cleanly as a GitHub Pages-compatible Markdown document (`.md`).
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endurance (Endy) Apinageri | Senior Backend & Platform Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        },
+                        darkbg: '#0a0f1d',
+                        darkcard: '#111827',
+                        darkborder: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom Styles & Glassmorphism */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Subtle Grid Pattern Background */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .light .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
 
-This version uses standard, widely supported GitHub-Flavored Markdown (GFM) features—such as standard blockquotes, GFM tables, and standard Markdown diagrams—so it renders smoothly on GitHub, Jekyll, Hugo, or any standard static site generator without relying on unsupported custom HTML tags.
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        .light ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-200 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300 light:bg-slate-50 light:text-slate-800 relative bg-grid-pattern min-h-screen">
 
----
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-gray-800/60 dark:border-gray-800/60 light:border-slate-200 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-2 group">
+                    <span class="font-mono text-xl font-bold text-brand-400 group-hover:text-brand-500 transition">&lt;Endy/&gt;</span>
+                    <span class="font-semibold text-lg tracking-tight hidden sm:inline text-white dark:text-white light:text-slate-900">Apinageri</span>
+                </a>
 
-```markdown
----
-layout: post
-title: "Demystifying AI: A Comprehensive Introduction to Artificial Intelligence"
-date: 2026-10-04
-categories: [Artificial Intelligence, Technology]
-tags: [AI, Machine Learning, Deep Learning, Computer Vision, Hardware]
----
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#about" class="text-gray-300 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 light:text-slate-600 light:hover:text-brand-600 transition">About</a>
+                    <a href="#articles" class="text-gray-300 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 light:text-slate-600 light:hover:text-brand-600 transition">Articles</a>
+                    <a href="#skills" class="text-gray-300 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 light:text-slate-600 light:hover:text-brand-600 transition">Skills</a>
+                    <a href="#experience" class="text-gray-300 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 light:text-slate-600 light:hover:text-brand-600 transition">Experience</a>
+                    <a href="#education" class="text-gray-300 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 light:text-slate-600 light:hover:text-brand-600 transition">Education</a>
+                </div>
 
-Artificial Intelligence has moved from speculative research labs into the fabric of daily life. From automated recommendation engines to autonomous driving and medical imaging, AI systems shape modern technology. To understand where this technology is heading, we need to understand where it began, how it works, and how its fundamental layers fit together.
+                <!-- Right Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" aria-label="Toggle Dark/Light Mode" class="p-2 rounded-lg bg-gray-800/80 dark:bg-gray-800/80 light:bg-slate-200 text-gray-300 dark:text-gray-300 light:text-slate-700 hover:text-white transition">
+                        <i id="themeIcon" class="fas fa-moon text-lg"></i>
+                    </button>
 
-This overview breaks down the foundational concepts, history, and core technologies of Artificial Intelligence.
+                    <!-- Contact CTA -->
+                    <a href="mailto:apinaendy@gmail.com" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/20 transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Get in Touch
+                    </a>
 
----
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-## What Is Artificial Intelligence?
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-gray-800/60 dark:border-gray-800 light:border-slate-200 glass-panel">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 dark:text-gray-300 light:text-slate-700 hover:bg-gray-800/50">About</a>
+            <a href="#articles" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 dark:text-gray-300 light:text-slate-700 hover:bg-gray-800/50">Articles</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 dark:text-gray-300 light:text-slate-700 hover:bg-gray-800/50">Skills</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 dark:text-gray-300 light:text-slate-700 hover:bg-gray-800/50">Experience</a>
+            <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 dark:text-gray-300 light:text-slate-700 hover:bg-gray-800/50">Education</a>
+            <a href="mailto:apinaendy@gmail.com" class="block w-full text-center px-4 py-2 mt-2 text-sm font-semibold rounded-lg text-white bg-brand-600 hover:bg-brand-500">
+                <i class="fas fa-paper-plane mr-2"></i> Get in Touch
+            </a>
+        </div>
+    </nav>
 
-A widely accepted foundational definition of AI was proposed by **John McCarthy** at the historic **1956 Dartmouth Conference**: *Artificial Intelligence is about letting a machine simulate the intelligent behavior of humans as precisely as it can be*.
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Status Badges -->
+                <div class="flex flex-wrap gap-2 items-center">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                        <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse mr-2"></span>
+                        Lead Engineer @ Leeta
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                        <i class="fas fa-user-graduate mr-1.5"></i> PhD Candidate @ EIM Malta
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <i class="fas fa-language mr-1.5"></i> English (Fluent) • Russian (Upper-Int.)
+                    </span>
+                </div>
 
-However, defining "intelligence" itself remains a moving target. Human intelligence is multifaceted. Under Howard Gardner’s **Theory of Multiple Intelligences**, human intellect expands across eight distinct categories:
+                <!-- Main Name Header -->
+                <div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white dark:text-white light:text-slate-900">
+                        Endurance (Endy) <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-teal-400">Apinageri</span>
+                    </h1>
+                    <p class="mt-3 text-xl sm:text-2xl font-mono text-gray-400 dark:text-gray-400 light:text-slate-600 font-medium">
+                        Senior Backend & Platform Engineer
+                    </p>
+                </div>
 
-1. **Linguistic Intelligence:** Sensitivity to spoken and written language.
-2. **Logical-Mathematical Intelligence:** Logical analysis, mathematical operations, and scientific investigation.
-3. **Spatial Intelligence:** The capacity to recognize and manipulate patterns in space.
-4. **Bodily-Kinesthetic Intelligence:** Using one’s body to solve problems or create products.
-5. **Musical Intelligence:** Skill in performance, composition, and appreciation of musical patterns.
-6. **Interpersonal Intelligence:** Understanding the intentions, motivations, and desires of others.
-7. **Intrapersonal Intelligence:** Understanding oneself, including emotions and motivations.
-8. **Naturalist Intelligence:** Recognizing and categorizing objects and species in nature.
+                <!-- Short Pitch -->
+                <p class="text-base sm:text-lg text-gray-300 dark:text-gray-300 light:text-slate-600 leading-relaxed max-w-3xl">
+                    Specializing in high-throughput distributed microservices, Golang runtime performance, event-driven architectures, and cloud platform engineering. Architecting resilient systems that power fintech, SaaS, and national security domains.
+                </p>
 
-Modern AI systems generally excel at specific forms of intelligence—such as Logical-Mathematical or Spatial tasks—while struggling with human-centric domains like Interpersonal or Intrapersonal understanding.
+                <!-- Primary Action Buttons -->
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="https://github.com/endyApina" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-xl font-medium text-sm bg-gray-800 dark:bg-gray-800 light:bg-slate-200 text-white dark:text-white light:text-slate-900 border border-gray-700 dark:border-gray-700 light:border-slate-300 hover:border-brand-500 hover:text-brand-400 transition transform hover:-translate-y-0.5">
+                        <i class="fab fa-github text-lg mr-2.5"></i> GitHub Profile
+                    </a>
+                    <a href="https://www.linkedin.com/in/endyapina/" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-xl font-medium text-sm bg-blue-600 hover:bg-blue-500 text-white transition transform hover:-translate-y-0.5 shadow-lg shadow-blue-600/20">
+                        <i class="fab fa-linkedin text-lg mr-2.5"></i> LinkedIn
+                    </a>
+                    <button onclick="copyToClipboard('apinaendy@gmail.com')" class="inline-flex items-center px-5 py-3 rounded-xl font-medium text-sm glass-panel text-gray-200 dark:text-gray-200 light:text-slate-800 hover:text-white border border-gray-700 hover:border-gray-500 transition">
+                        <i class="fas fa-envelope text-lg mr-2.5 text-brand-400"></i>
+                        <span>apinaendy@gmail.com</span>
+                        <i class="fas fa-copy ml-2.5 text-xs text-gray-400"></i>
+                    </button>
+                </div>
+            </div>
 
----
+            <!-- Right Terminal / Code Visual Widget -->
+            <div class="lg:col-span-4">
+                <div class="rounded-2xl glass-panel p-5 font-mono text-xs border border-gray-800 shadow-2xl relative overflow-hidden">
+                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-gray-800 text-gray-400">
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                        </div>
+                        <span class="text-[10px] text-gray-500">engineer_profile.go</span>
+                    </div>
+                    <pre class="text-gray-300 leading-relaxed overflow-x-auto"><code><span class="text-purple-400">package</span> main
 
-### Weak AI vs. Strong AI
+<span class="text-purple-400">type</span> <span class="text-yellow-300">Engineer</span> <span class="text-purple-400">struct</span> {
+    Name     <span class="text-teal-300">string</span>
+    Exp      <span class="text-teal-300">int</span>
+    Primary  []<span class="text-teal-300">string</span>
+    Domains  []<span class="text-teal-300">string</span>
+}
 
-AI research divides capabilities into two theoretical classifications:
+<span class="text-purple-400">func</span> <span class="text-blue-400">GetProfile</span>() <span class="text-yellow-300">Engineer</span> {
+    <span class="text-purple-400">return</span> <span class="text-yellow-300">Engineer</span>{
+        Name:    <span class="text-emerald-300">"Endurance Apinageri"</span>,
+        Exp:     <span class="text-orange-300">8</span>, <span class="text-gray-500">// Years</span>
+        Primary: []<span class="text-teal-300">string</span>{<span class="text-emerald-300">"Go"</span>, <span class="text-emerald-300">"Python"</span>, <span class="text-emerald-300">"TS"</span>},
+        Domains: []<span class="text-teal-300">string</span>{<span class="text-emerald-300">"Fintech"</span>, <span class="text-emerald-300">"SaaS"</span>, <span class="text-emerald-300">"SecOps"</span>},
+    }
+}</code></pre>
+                </div>
+            </div>
 
-* **Weak AI (Artificial Narrow Intelligence):** Systems engineered to accomplish a specific task without real consciousness or general reasoning. Weak AI simulates intelligent behavior based on rules or statistical training (e.g., speech assistants, chess engines).
-* **Strong AI (Artificial General Intelligence):** Machines capable of true reasoning, self-awareness, and generalized problem-solving across any context. Strong AI aims to mirror or exceed the human brain's cognitive flexibility.
+        </div>
+    </section>
 
----
+    <!-- About Section -->
+    <section id="about" class="py-16 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white dark:text-white light:text-slate-900">About & Core Expertise</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+            </div>
 
-## AI, Machine Learning, and Deep Learning: What’s the Difference?
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800/80 hover:border-brand-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-2">High-Load Microservices</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        8+ years of commercial software development experience with 4+ years focused exclusively on Go. Proven record architecting and scaling business-critical transactional microservices.
+                    </p>
+                </div>
 
-These three terms are frequently conflated, but they exist as nested subsets of computing:
+                <!-- Card 2 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800/80 hover:border-brand-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-2">Go Internals Mastery</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Deep engineering understanding of Go under the hood: low-level concurrency patterns, memory allocation behavior, garbage collection (GC) tuning, and high-performance throughput optimization.
+                    </p>
+                </div>
 
+                <!-- Card 3 -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800/80 hover:border-brand-500/50 transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-2">Platform & Clean Architecture</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Driving Domain-Driven Design (DDD), Clean Architecture, Infrastructure as Code, Kafka / Pulsar messaging pipelines, strict database integrity, and high automated test coverage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-```
+    <!-- Articles / Writing Section -->
+    <section id="articles" class="py-16 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-mono font-semibold uppercase tracking-wider text-brand-400">Technical Insights</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white dark:text-white light:text-slate-900 mt-1">Articles & Engineering Writing</h2>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex space-x-2 mt-4 md:mt-0" id="articleFilter">
+                    <button data-filter="all" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-500 text-white transition filter-btn">All</button>
+                    <button data-filter="golang" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-800 text-gray-300 hover:text-white transition filter-btn">Golang</button>
+                    <button data-filter="architecture" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-800 text-gray-300 hover:text-white transition filter-btn">Architecture</button>
+                </div>
+            </div>
 
-+-------------------------------------------------------+
-|  ARTIFICIAL INTELLIGENCE                              |
-|  (The overarching goal: machines simulating human logic) |
-|   +-----------------------------------------------+   |
-|   |  MACHINE LEARNING                             |   |
-|   |  (Approaches where algorithms learn from data)|   |
-|   |   +---------------------------------------+   |   |
-|   |   |  DEEP LEARNING                        |   |   |
-|   |   |  (Multi-layered neural networks)      |   |   |
-|   |   +---------------------------------------+   |   |
-|   +-----------------------------------------------+   |
-+-------------------------------------------------------+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Article 1 (Featured) -->
+                <div class="article-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-500/60 transition flex flex-col justify-between" data-category="golang">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-400 font-mono font-medium">Golang</span>
+                            <span>8 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-2 hover:text-brand-400 transition">
+                            Under the Hood: Go Concurrency, Memory Allocation & GC Tuning in Production
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            A deep dive into Go runtime internals, optimization strategies for high-throughput microservices, and practical lessons learned scaling transactional systems.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-gray-800/40 pt-4 text-xs text-gray-400">
+                        <span class="font-mono text-brand-400">Featured Article</span>
+                        <button onclick="copyToClipboard('https://github.com/endyApina')" class="hover:text-white transition flex items-center">
+                            <i class="fas fa-share-alt mr-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
 
-```
+                <!-- Article 2 -->
+                <div class="article-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-500/60 transition flex flex-col justify-between" data-category="architecture">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                            <span class="px-2.5 py-0.5 rounded-full bg-purple-500/10 text-purple-400 font-mono font-medium">Event-Driven</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-2 hover:text-brand-400 transition">
+                            Designing Event-Driven Banking Platforms with Apache Pulsar & Go
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            How we structured low-latency real-time microservices using gRPC and Pulsar pub/sub mechanisms for high reliability.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-gray-800/40 pt-4 text-xs text-gray-400">
+                        <span class="font-mono text-gray-500">Upcoming Draft</span>
+                        <button onclick="copyToClipboard('https://github.com/endyApina')" class="hover:text-white transition flex items-center">
+                            <i class="fas fa-share-alt mr-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
 
-* **Artificial Intelligence:** The target and final outcome—building machines capable of cognitive tasks.
-* **Machine Learning (ML):** A core subset of AI. Rather than hand-coding static rules, ML provides data to algorithms so they can acquire cognitive abilities and learn patterns independently.
-* **Deep Learning (DL):** A specialized form of ML utilizing deep neural networks inspired by biological brains. DL provides highly efficient, self-training systems capable of handling massive, unstructured data streams like raw video or audio.
+                <!-- Article 3 -->
+                <div class="article-card glass-panel rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-500/60 transition flex flex-col justify-between" data-category="architecture">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                            <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 font-mono font-medium">DevOps & IaC</span>
+                            <span>10 min read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-2 hover:text-brand-400 transition">
+                            Building Resilient Multi-Tenant SaaS Platforms with Terraform & Kubernetes
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            Operationalizing cloud platforms with OpenTelemetry observability, container security, and automated CI/CD pipelines.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-gray-800/40 pt-4 text-xs text-gray-400">
+                        <span class="font-mono text-gray-500">Upcoming Draft</span>
+                        <button onclick="copyToClipboard('https://github.com/endyApina')" class="hover:text-white transition flex items-center">
+                            <i class="fas fa-share-alt mr-1"></i> Copy Link
+                        </button>
+                    </div>
+                </div>
 
-> **Analogy:** If **AI** is the overall brain function, **Machine Learning** is the learning process, and **Deep Learning** is the high-performance neural apparatus powering that process.
+            </div>
+        </div>
+    </section>
 
----
+    <!-- Technical Skills Matrix Section -->
+    <section id="skills" class="py-16 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white dark:text-white light:text-slate-900">Technical Skills Matrix</h2>
+                <p class="text-gray-400 text-sm mt-2">Comprehensive breakdown of backend tools, infrastructure, and architectural methodologies.</p>
+            </div>
 
-## The History of AI: Peaks and Winters
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Languages -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-code text-brand-400 mr-2.5"></i> Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-mono bg-brand-500/20 text-brand-300 border border-brand-500/30">Golang (Expert)</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">TypeScript</span>
+                    </div>
+                </div>
 
-The development of AI has not been linear; it has oscillated between surges of enthusiasm and strict research funding cuts known as "AI Winters".
+                <!-- Distributed Systems -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-server text-purple-400 mr-2.5"></i> Distributed Systems
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Apache Kafka</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Apache Pulsar</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">gRPC</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">REST APIs</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Event-Driven</span>
+                    </div>
+                </div>
 
-* **Before 1956 — Precursors & Initiation Period:** Early mathematical foundations laid by Alan Turing and cybernetics researchers. The birth of formal AI occurred at the 1956 Dartmouth Conference, coining the term "Artificial Intelligence".
-* **1956–1976 — The First Booming Period:** Early optimism surged with symbolic reasoning programs, early natural language translation, and automated theorem provers.
-* **1976–1982 — The First AI Winter:** Overinflated expectations hit hardware limitations. High-level mathematical logic failed to handle real-world complexity, leading to massive cuts in research grants.
-* **1982–1987 — The Second Booming Period:** Commercialization spiked around "Expert Systems"—specialized software designed to emulate human decision-making in specific industries—and dedicated hardware like Lisp machines.
-* **1987–1997 — The Second AI Winter:** Specialized hardware fell to cheaper desktop computers, and brittle expert systems proved too costly to update, driving another collapse in market investment.
-* **1997–2010 — Recovery Period:** Focus shifted to statistical learning and practical algorithms. Milestones like IBM's Deep Blue defeating chess world champion Garry Kasparov proved AI's renewed utility.
-* **2010–Present — Rapid Growth Period:** The convergence of big data, modern GPUs, and deep learning algorithms triggered an explosive growth phase, expanding AI into a multi-industry economic engine.
+                <!-- Platform Engineering & SRE -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-cloud text-blue-400 mr-2.5"></i> Platform & Cloud
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Terraform / CDK</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Kubernetes</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Docker</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">AWS (ECS, Lambda, EC2)</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">GitHub Actions</span>
+                    </div>
+                </div>
 
----
+                <!-- Data & Messaging -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-database text-yellow-400 mr-2.5"></i> Data & Messaging
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">PostgreSQL</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Redis</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">DynamoDB</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">MySQL</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">RabbitMQ paradigms</span>
+                    </div>
+                </div>
 
-## The Three Main Schools of AI Thought
+                <!-- Observability -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-chart-line text-emerald-400 mr-2.5"></i> Observability
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">OpenTelemetry</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Prometheus</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">CloudWatch</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Metrics, Traces, Logs</span>
+                    </div>
+                </div>
 
-Researchers historically approached machine intelligence from three distinct methodological perspectives:
+                <!-- Architecture & Leadership -->
+                <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                    <h3 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mb-4 flex items-center">
+                        <i class="fas fa-sitemap text-teal-400 mr-2.5"></i> Governance & Practices
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Clean Arch / DDD</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Mentorship</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">Agile / Scrum</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-800 text-gray-300 border border-gray-700">TDD / BDD</span>
+                    </div>
+                </div>
 
-1. **Symbolism (Logical / Rational School):**
-   * **Premise:** Human intelligence relies on symbols, rules, and logic.
-   * **Mechanism:** Knowledge is explicitly programmed using mathematical logic and rule bases (e.g., "If X and Y, then Z").
-2. **Connectionism (Bionic / Sub-symbolic School):**
-   * **Premise:** Intelligence emerges from biological structural networks (the brain's neurons).
-   * **Mechanism:** Artificial Neural Networks (ANNs) learn from data by updating weight connections between synthetic neurons, forming the backbone of modern Deep Learning.
-3. **Behaviorism (Action / Cybernetics School):**
-   * **Premise:** Intelligence is rooted in physical interaction and adaptation to dynamic environments.
-   * **Mechanism:** Emphasizes sensory-motor systems, feedback control loops, and Reinforcement Learning (reward/penalty systems).
+            </div>
+        </div>
+    </section>
 
----
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-16 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white dark:text-white light:text-slate-900">Work Experience</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+            </div>
 
-## The AI Technology Stack
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-gray-800 dark:border-gray-800 light:border-slate-300 ml-4 md:ml-32 space-y-12">
 
-To deploy an AI solution, systems must integrate across multiple physical and virtual layers:
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-darkbg dark:border-darkbg light:border-slate-50 group-hover:scale-125 transition"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-brand-400 font-semibold mb-1 md:mb-0">
+                        AUG 2025 - PRESENT
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Lead Software & Platform Engineer</h3>
+                                <span class="text-sm font-medium text-brand-400">Leeta • Remote</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 list-disc list-inside leading-relaxed">
+                            <li>Founded and led the engineering organization, owning overall technical direction, microservice architecture, and platform operations for a multi-tenant SaaS product.</li>
+                            <li>Architected scalable, concurrent Golang microservices and event-driven backend workflows powering financial/SaaS capabilities.</li>
+                            <li>Owned full DevOps & SRE lifecycle: containerized AWS infra via Terraform, automated CI/CD pipelines, and configured OpenTelemetry/CloudWatch.</li>
+                            <li>Established engineering practices around code reviews, automated testing gates, design documentation, and incident protocols.</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-darkbg dark:border-darkbg light:border-slate-50 group-hover:scale-125 transition"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-gray-400 font-semibold mb-1 md:mb-0">
+                        MAY 2023 - OCT 2025
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Senior Software Engineer</h3>
+                                <span class="text-sm font-medium text-purple-400">Greenbone • Osnabrück, Germany</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 list-disc list-inside leading-relaxed">
+                            <li>Designed and operated a cloud event-processing platform processing 2.5M+ records daily in near real time for national security customers.</li>
+                            <li>Built event-driven Golang microservices for ingestion, enrichment, and classification of security datasets.</li>
+                            <li>Applied TDD/BDD (Python + Behave) to improve confidence and reliability across core services.</li>
+                            <li>Enhanced platform observability with Prometheus and OpenTelemetry for deeper performance visibility.</li>
+                        </ul>
+                    </div>
+                </div>
 
-```
+                <!-- Job 3 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-darkbg dark:border-darkbg light:border-slate-50 group-hover:scale-125 transition"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-gray-400 font-semibold mb-1 md:mb-0">
+                        FEB 2022 - APR 2023
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Senior Software Engineer</h3>
+                                <span class="text-sm font-medium text-blue-400">Rova • London, UK</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 list-disc list-inside leading-relaxed">
+                            <li>Conceptualized and implemented a large-scale microservices infrastructure to support the core banking platform for ROVA under FCMB Bank (UK) Limited.</li>
+                            <li>Architected event-driven microservices employing gRPC and Apache Pulsar for real-time banking operations.</li>
+                        </ul>
+                    </div>
+                </div>
 
-+---------------------------------------------------+
-|  Application Level (Smart Security, Vision, NLP)  |
-+---------------------------------------------------+
-|  Algorithm Level   (DL Models, Optimization, Math)|
-+---------------------------------------------------+
-|  Chip Level        (NPUs, GPUs, Custom ASICs)     |
-+---------------------------------------------------+
-|  Device Level      (Edge Hardware, Sensors)       |
-+---------------------------------------------------+
-|  Process Level     (Semiconductor Fabrication)    |
-+---------------------------------------------------+
+                <!-- Job 4 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-darkbg dark:border-darkbg light:border-slate-50 group-hover:scale-125 transition"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-gray-400 font-semibold mb-1 md:mb-0">
+                        APR 2021 - JUL 2022
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Lead Software Developer</h3>
+                                <span class="text-sm font-medium text-teal-400">Global Performance Index • Lagos, Nigeria</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 list-disc list-inside leading-relaxed">
+                            <li>Supervised and led an engineering team of 15 engineers across Front-End, Back-End, and DevOps.</li>
+                            <li>Refined requirements for new software platforms and SaaS infrastructure alignment.</li>
+                        </ul>
+                    </div>
+                </div>
 
-```
+                <!-- Job 5 -->
+                <div class="relative pl-8 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-600 border-4 border-darkbg dark:border-darkbg light:border-slate-50 group-hover:scale-125 transition"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-mono text-xs text-gray-400 font-semibold mb-1 md:mb-0">
+                        DEC 2018 - MAR 2021
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900">Software Developer</h3>
+                                <span class="text-sm font-medium text-amber-400">Century Group • Lekki, Lagos, Nigeria</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 dark:text-gray-300 light:text-slate-600">
+                            Developed and maintained enterprise backend modules and database architectures.
+                        </p>
+                    </div>
+                </div>
 
-### An Overview of AI Processors
+            </div>
+        </div>
+    </section>
 
-Standard computing hardware was not built for the matrix multiplication required by modern deep neural networks. AI computing relies on specialized silicon:
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-16 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white dark:text-white light:text-slate-900">Education & Qualifications</h2>
+                <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+            </div>
 
-| Processor Type | Architectural Characteristics | Best Suited For |
-| :--- | :--- | :--- |
-| **CPU** (Central Processing Unit) | Optimized for low-latency, sequential instruction handling with few complex cores. | General computing, logic control, sequential routines. |
-| **GPU** (Graphics Processing Unit) | Parallel architecture featuring thousands of smaller cores designed for simultaneous operations. | Large-scale AI model training, computer vision, massive matrix operations. |
-| **NPU / ASIC** (Neural Processing Unit) | Hardware customized down to the circuit logic to execute deep learning mathematical pipelines natively. | High-efficiency edge inference, low-power deployments, dedicated AI accelerators. |
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Academic Degrees -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 flex items-center">
+                        <i class="fas fa-graduation-cap text-brand-400 mr-2.5"></i> Academic Degrees
+                    </h3>
 
----
+                    <!-- Degree 1 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <span class="text-xs font-mono text-brand-400 font-semibold">IN PROGRESS</span>
+                        <h4 class="text-lg font-bold text-white dark:text-white light:text-slate-900 mt-1">Doctor of Philosophy (PhD) in Computer Science & Engineering</h4>
+                        <p class="text-sm text-gray-400 mt-1">European Institute of Management, Malta</p>
+                    </div>
 
-## Core Technical Fields & Real-World Applications
+                    <!-- Degree 2 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <h4 class="text-lg font-bold text-white dark:text-white light:text-slate-900">M.Sc. Cybersecurity, Threat Intelligence & Forensics</h4>
+                        <p class="text-sm text-gray-400 mt-1">University of Salford, Manchester, United Kingdom</p>
+                    </div>
 
-Modern artificial intelligence operates predominantly across three key technical capabilities:
+                    <!-- Degree 3 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800">
+                        <h4 class="text-lg font-bold text-white dark:text-white light:text-slate-900">B.Sc. Computer and Information Science</h4>
+                        <p class="text-sm text-gray-400 mt-1">Lead City University, Ibadan, Oyo, Nigeria</p>
+                    </div>
+                </div>
 
+                <!-- Certifications & Languages -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 flex items-center">
+                        <i class="fas fa-certificate text-purple-400 mr-2.5"></i> Professional Certifications
+                    </h3>
 
-```
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white dark:text-white light:text-slate-900">Platform Engineering Certified Practitioner</h4>
+                            <p class="text-sm text-gray-400 mt-1">University of Platform Engineering</p>
+                        </div>
+                    </div>
 
-```
-           +-------------------------------------+
-           |       CORE AI TECHNOLOGIES          |
-           +------------------+------------------+
-                              |
-    +-------------------------+-------------------------+
-    |                         |                         |
+                    <h3 class="text-xl font-bold text-white dark:text-white light:text-slate-900 flex items-center pt-4">
+                        <i class="fas fa-globe text-blue-400 mr-2.5"></i> Language Fluency
+                    </h3>
 
-```
+                    <div class="glass-panel p-6 rounded-2xl border border-gray-800 grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-mono">English</span>
+                            <p class="text-base font-bold text-white dark:text-white light:text-slate-900 mt-0.5">Fluent / Native</p>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-mono">Russian</span>
+                            <p class="text-base font-bold text-white dark:text-white light:text-slate-900 mt-0.5">Upper-Intermediate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-+-------v-------+         +-------v-------+         +-------v-------+
-|    COMPUTER   |         |     SPEECH    |         |    NATURAL    |
-|     VISION    |         |   PROCESSING  |         |    LANGUAGE   |
-|   (CV)        |         |               |         |PROCESSING(NLP)|
-+-------+-------+         +-------+-------+         +-------+-------+
-|                         |                         |
-+-------------------------+-------------------------+
-|
-+------------------v------------------+
-|       PRACTICAL DEPLOYMENTS         |
-+------------------+------------------+
-|
-+------------+------------+--+--+------------+------------+
-|            |            |     |            |            |
-Smart        Smart        Smart  Smart        Smart        Smart
-Cities     Healthcare    Retail Security     Homes        Driving
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800/60 dark:border-gray-800/60 light:border-slate-200 glass-panel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="#" class="font-mono text-2xl font-bold text-brand-400 hover:text-brand-300 transition">&lt;Endy/&gt;</a>
+            <p class="text-sm text-gray-400 mt-2">Endurance (Endy) Apinageri — Senior Backend & Platform Engineer</p>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://github.com/endyApina" target="_blank" rel="noopener" class="text-gray-400 hover:text-brand-400 text-xl transition"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/endyapina/" target="_blank" rel="noopener" class="text-gray-400 hover:text-brand-400 text-xl transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:apinaendy@gmail.com" class="text-gray-400 hover:text-brand-400 text-xl transition"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-xs text-gray-500 mt-8">© <span id="year"></span> Endurance Apinageri. Designed for GitHub Pages.</p>
+        </div>
+    </footer>
 
-```
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 glass-panel border border-brand-500/50 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center space-x-3 z-50">
+        <i class="fas fa-check-circle text-brand-400 text-lg"></i>
+        <span id="toastMsg" class="text-sm font-medium">Copied to clipboard!</span>
+    </div>
 
-* **Computer Vision (CV):** Algorithms that analyze, segment, and understand visual data from cameras and sensors (e.g., facial recognition, industrial flaw inspection).
-* **Speech Processing:** Converting acoustic waves into structured text (ASR) and generating human-like audio syntheses (TTS).
-* **Natural Language Processing (NLP):** Systems designed to read, translate, extract context from, and generate human written languages.
+    <script>
+        // Set Year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-### Real-World Deployment Scenarios
+        // Dark / Light Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
 
-1. **Smart Cities:** Traffic flow optimization, adaptive public transit schedules, and automated utility management.
-2. **Smart Healthcare:** AI-assisted medical imaging diagnostics, genomic analysis, and predictive patient monitoring.
-3. **Smart Retail:** Automated checkout, personalized inventory forecasting, and real-time foot-traffic analysis.
-4. **Smart Security:** Perimeter monitoring, automated incident alert systems, and civil safety analytics.
-5. **Smart Home:** IoT integration, automated energy optimization, and adaptive environmental controls.
-6. **Smart Driving:** Real-time sensor fusion (LiDAR, radar, cameras) enabling driver-assist and fully autonomous navigation.
+        if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            htmlElement.classList.remove('dark');
+            htmlElement.classList.add('light');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
 
----
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
 
-> **Source Note:** This article synthesizes key concepts from Chapter 1 ("A General Introduction to Artificial Intelligence") of *Artificial Intelligence Technology* by Huawei Technologies Co., Ltd., published Open Access via Springer Nature.
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-```
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toast Helper
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast(`Copied "${text}" to clipboard!`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Article Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                // Active Button Styling
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-500', 'text-white');
+                    b.classList.add('bg-gray-800', 'text-gray-300');
+                });
+                btn.classList.remove('bg-gray-800', 'text-gray-300');
+                btn.classList.add('bg-brand-500', 'text-white');
+
+                // Filter Cards
+                articleCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
