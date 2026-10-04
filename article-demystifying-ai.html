@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demystifying AI: A Comprehensive Introduction to Artificial Intelligence — Endurance Apinageri</title>
+  <meta name="description" content="A comprehensive introduction to Artificial Intelligence covering history, weak vs strong AI, machine learning vs deep learning, technology stacks, and processors.">
+  
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #2f81f7;
+      --accent-dim: rgba(47, 129, 247, 0.15);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    nav {
+      margin-bottom: 2.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    article h2 {
+      font-size: 1.35rem;
+      color: #fff;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    article h3 {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    article p {
+      margin-bottom: 1.25rem;
+      color: #c9d1d9;
+      font-size: 1.025rem;
+    }
+
+    article ul, article ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      color: #c9d1d9;
+    }
+
+    article li {
+      margin-bottom: 0.5rem;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    pre {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text);
+      margin: 1.5rem 0;
+      line-height: 1.45;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    td {
+      color: #c9d1d9;
+    }
+
+    .attribution {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <a href="index.html">&larr; Back to Portfolio</a>
+    </nav>
+
+    <header>
+      <h1>Demystifying AI: A Comprehensive Introduction to Artificial Intelligence</h1>
+      <div class="meta">By Endurance Apinageri • Published October 2026 • 8 min read</div>
+    </header>
+
+    <article>
+      <p>
+        Artificial Intelligence has moved from speculative research labs into the fabric of daily life. From automated recommendation engines to autonomous driving and medical imaging, AI systems shape modern technology. To understand where this technology is heading, we need to understand where it began, how it works, and how its fundamental layers fit together.
+      </p>
+
+      <h2>What Is Artificial Intelligence?</h2>
+      <p>
+        A widely accepted foundational definition of AI was proposed by John McCarthy at the historic 1956 Dartmouth Conference: <em>Artificial Intelligence is about letting a machine simulate the intelligent behavior of humans as precisely as it can be.</em>
+      </p>
+      <p>
+        However, defining "intelligence" itself remains a moving target. Human intelligence is multifaceted. Under Howard Gardner’s Theory of Multiple Intelligences, human intellect expands across eight distinct categories:
+      </p>
+      <ul>
+        <li><strong>Linguistic Intelligence:</strong> Sensitivity to spoken and written language.</li>
+        <li><strong>Logical-Mathematical Intelligence:</strong> Logical analysis, mathematical operations, and scientific investigation.</li>
+        <li><strong>Spatial Intelligence:</strong> The capacity to recognize and manipulate patterns in space.</li>
+        <li><strong>Bodily-Kinesthetic Intelligence:</strong> Using one’s body to solve problems or create products.</li>
+        <li><strong>Musical Intelligence:</strong> Skill in performance, composition, and appreciation of musical patterns.</li>
+        <li><strong>Interpersonal Intelligence:</strong> Understanding the intentions, motivations, and desires of others.</li>
+        <li><strong>Intrapersonal Intelligence:</strong> Understanding oneself, including emotions and motivations.</li>
+        <li><strong>Naturalist Intelligence:</strong> Recognizing and categorizing objects and species in nature.</li>
+      </ul>
+      <p>
+        Modern AI systems generally excel at specific forms of intelligence—such as Logical-Mathematical or Spatial tasks—while struggling with human-centric domains like Interpersonal or Intrapersonal understanding.
+      </p>
+
+      <h2>Weak AI vs. Strong AI</h2>
+      <p>AI research divides capabilities into two theoretical classifications:</p>
+      <ul>
+        <li><strong>Weak AI (Artificial Narrow Intelligence):</strong> Systems engineered to accomplish a specific task without real consciousness or general reasoning. Weak AI simulates intelligent behavior based on rules or statistical training (e.g., speech assistants, chess engines).</li>
+        <li><strong>Strong AI (Artificial General Intelligence):</strong> Machines capable of true reasoning, self-awareness, and generalized problem-solving across any context. Strong AI aims to mirror or exceed the human brain's cognitive flexibility.</li>
+      </ul>
+
+      <h2>AI, Machine Learning, and Deep Learning: What’s the Difference?</h2>
+      <p>
+        These three terms are frequently conflated, but they exist as nested subsets of computing:
+      </p>
+<pre>
++-------------------------------------------------------+
+|  ARTIFICIAL INTELLIGENCE                              |
+|  (The overarching goal: machines simulating logic)    |
+|   +-----------------------------------------------+   |
+|   |  MACHINE LEARNING                             |   |
+|   |  (Approaches where algorithms learn data)     |   |
+|   |   +---------------------------------------+   |   |
+|   |   |  DEEP LEARNING                        |   |   |
+|   |   |  (Multi-layered neural networks)      |   |   |
+|   |   +---------------------------------------+   |   |
+|   +-----------------------------------------------+   |
++-------------------------------------------------------+
+</pre>
+      <ul>
+        <li><strong>Artificial Intelligence:</strong> The target and final outcome—building machines capable of cognitive tasks.</li>
+        <li><strong>Machine Learning (ML):</strong> A core subset of AI. Rather than hand-coding static rules, ML provides data to algorithms so they can acquire cognitive abilities and learn patterns independently.</li>
+        <li><strong>Deep Learning (DL):</strong> A specialized form of ML utilizing deep neural networks inspired by biological brains. DL provides highly efficient, self-training systems capable of handling massive, unstructured data streams like raw video or audio.</li>
+      </ul>
+      <blockquote>
+        Analogy: If AI is the overall brain function, Machine Learning is the learning process, and Deep Learning is the high-performance neural apparatus powering that process.
+      </blockquote>
+
+      <h2>The History of AI: Peaks and Winters</h2>
+      <p>
+        The development of AI has not been linear; it has oscillated between surges of enthusiasm and strict research funding cuts known as "AI Winters".
+      </p>
+      <ul>
+        <li><strong>Precursors &amp; Initiation Period (Pre-1956):</strong> Early mathematical foundations laid by Alan Turing and cybernetics researchers. The birth of formal AI occurred at the 1956 Dartmouth Conference, coining the term "Artificial Intelligence".</li>
+        <li><strong>The First Booming Period (1956–1976):</strong> Early optimism surged with symbolic reasoning programs, early natural language translation, and automated theorem provers.</li>
+        <li><strong>The First AI Winter (1976–1982):</strong> Overinflated expectations hit hardware limitations. High-level mathematical logic failed to handle real-world complexity, leading to massive cuts in research grants.</li>
+        <li><strong>The Second Booming Period (1982–1987):</strong> Commercialization spiked around "Expert Systems"—specialized software designed to emulate human decision-making in specific industries—and dedicated hardware like Lisp machines.</li>
+        <li><strong>The Second AI Winter (1987–1997):</strong> Specialized hardware fell to cheaper desktop computers, and brittle expert systems proved too costly to update, driving another collapse in market investment.</li>
+        <li><strong>Recovery Period (1997–2010):</strong> Focus shifted to statistical learning and practical algorithms. Milestones like IBM's Deep Blue defeating chess world champion Garry Kasparov proved AI's renewed utility.</li>
+        <li><strong>Rapid Growth Period (2010–Present):</strong> The convergence of big data, modern GPUs, and deep learning algorithms triggered an explosive growth phase, expanding AI into a multi-industry economic engine.</li>
+      </ul>
+
+      <h2>The Three Main Schools of AI Thought</h2>
+      <p>Researchers historically approached machine intelligence from three distinct methodological perspectives:</p>
+      <ol>
+        <li><strong>Symbolism (Logical / Rational School):</strong> Human intelligence relies on symbols, rules, and logic. Knowledge is explicitly programmed using mathematical logic and rule bases (e.g., "If X and Y, then Z").</li>
+        <li><strong>Connectionism (Bionic / Sub-symbolic School):</strong> Intelligence emerges from biological structural networks (the brain's neurons). Artificial Neural Networks (ANNs) learn from data by updating weight connections between synthetic neurons, forming the backbone of modern Deep Learning.</li>
+        <li><strong>Behaviorism (Action / Cybernetics School):</strong> Intelligence is rooted in physical interaction and adaptation to dynamic environments. Emphasizes sensory-motor systems, feedback control loops, and Reinforcement Learning (reward/penalty systems).</li>
+      </ol>
+
+      <h2>The AI Technology Stack</h2>
+      <p>To deploy an AI solution, systems must integrate across multiple physical and virtual layers:</p>
+<pre>
++---------------------------------------------------+
+|  Application Level (Smart Security, Vision, NLP)  |
++---------------------------------------------------+
+|  Algorithm Level   (DL Models, Optimization, Math)|
++---------------------------------------------------+
+|  Chip Level        (NPUs, GPUs, Custom ASICs)     |
++---------------------------------------------------+
+|  Device Level      (Edge Hardware, Sensors)       |
++---------------------------------------------------+
+|  Process Level     (Semiconductor Fabrication)    |
++---------------------------------------------------+
+</pre>
+
+      <h2>An Overview of AI Processors</h2>
+      <p>Standard computing hardware was not built for the matrix multiplication required by modern deep neural networks. AI computing relies on specialized silicon:</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Processor Type</th>
+            <th>Architectural Characteristics</th>
+            <th>Best Suited For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CPU</strong> (Central Processing Unit)</td>
+            <td>Optimized for low-latency, sequential instruction handling with few complex cores.</td>
+            <td>General computing, logic control, sequential routines.</td>
+          </tr>
+          <tr>
+            <td><strong>GPU</strong> (Graphics Processing Unit)</td>
+            <td>Parallel architecture featuring thousands of smaller cores designed for simultaneous operations.</td>
+            <td>Large-scale AI model training, computer vision, massive matrix operations.</td>
+          </tr>
+          <tr>
+            <td><strong>NPU / ASIC</strong> (Neural Processing Unit)</td>
+            <td>Hardware customized down to circuit logic to execute deep learning mathematical pipelines natively.</td>
+            <td>High-efficiency edge inference, low-power deployments, dedicated AI accelerators.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Core Technical Fields &amp; Real-World Applications</h2>
+      <p>Modern artificial intelligence operates predominantly across three key technical capabilities:</p>
+      <ul>
+        <li><strong>Computer Vision (CV):</strong> Algorithms that analyze, segment, and understand visual data from cameras and sensors (e.g., facial recognition, industrial flaw inspection).</li>
+        <li><strong>Speech Processing:</strong> Converting acoustic waves into structured text (ASR) and generating human-like audio syntheses (TTS).</li>
+        <li><strong>Natural Language Processing (NLP):</strong> Systems designed to read, translate, extract context from, and generate human written languages.</li>
+      </ul>
+
+      <h3>Real-World Deployment Scenarios</h3>
+      <ul>
+        <li><strong>Smart Cities:</strong> Traffic flow optimization, adaptive public transit schedules, and automated utility management.</li>
+        <li><strong>Smart Healthcare:</strong> AI-assisted medical imaging diagnostics, genomic analysis, and predictive patient monitoring.</li>
+        <li><strong>Smart Retail:</strong> Automated checkout, personalized inventory forecasting, and real-time foot-traffic analysis.</li>
+        <li><strong>Smart Security:</strong> Perimeter monitoring, automated incident alert systems, and civil safety analytics.</li>
+        <li><strong>Smart Home:</strong> IoT integration, automated energy optimization, and adaptive environmental controls.</li>
+        <li><strong>Smart Driving:</strong> Real-time sensor fusion (LiDAR, radar, cameras) enabling driver-assist and fully autonomous navigation.</li>
+      </ul>
+    </article>
+
+    <div class="attribution">
+      <strong>Source Attribution:</strong> This synthesis is based on concepts from Chapter 1 ("A General Introduction to Artificial Intelligence") of <em>Artificial Intelligence Technology</em> by Huawei Technologies Co., Ltd., published under Open Access via Springer Nature.
+    </div>
+
+    <footer>
+      &copy; Endurance Apinageri. Hosted on GitHub Pages.
+    </footer>
+  </div>
+
+</body>
+</html>
